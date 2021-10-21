@@ -1,0 +1,29 @@
+on: push
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone
+        uses: actions/checkout@v2
+      - name: generate
+        uses: docker://ghcr.io/fluidattacks/makes:21.11
+        with:
+          args: m . /generate/data
+      - name: build
+        run: |
+          sudo apt install hugo
+          hugo
+      - name: deploy
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          author: Kevin Amado <kamadorueda@gmail.com>
+          committer: Kevin Amado <kamadorueda@gmail.com>
+          commit_message: "feat(doc): build and release website"
+
+          build_dir: docs
+          fqdn: python.on-nix.com
+          keep_history: false
+          target_branch: release
+          verbose: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

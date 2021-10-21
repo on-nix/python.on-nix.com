@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ range $.Site.Data.projects }}
+    <p>
+      <dfn>
+        <a class="b blue" href="/projects/{{ .title }}">{{ .title }}</a>
+      </dfn>
+      - {{ .meta.desc }}
+    </p>
+  {{ end }}
+{{ end }}

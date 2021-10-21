@@ -1,0 +1,4 @@
+baseUrl: https://python.on-nix.com
+module:
+  imports:
+    - path: github.com/on-nix/theme

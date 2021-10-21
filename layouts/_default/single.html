@@ -1,0 +1,84 @@
+{{ define "title" }}
+  {{ .Params.project }} - Python on Nix
+{{ end }}
+
+{{ define "main" }}
+  {{ $projectData := index $.Site.Data.projects .Params.project }}
+
+  <p>
+    <dfn class="b blue">
+      {{ $projectData.title }}
+    </dfn>
+    - {{ $projectData.meta.desc }}
+  </p>
+
+  <ul>
+    <li>
+      <a class="blue link" href={{ $projectData.meta.home }}>
+        {{ $projectData.meta.home }}
+      </a>
+    </li>
+    <li>
+      <a class="blue link" href="https://pypi.org/project/{{ $projectData.title }}">
+        https://pypi.org/project/{{ $projectData.title }}
+      </a>
+    </li>
+  </ul>
+
+
+  Available versions:
+  <ul>
+    {{ range $version := $projectData.versions }}
+      {{ range $pythonVersion := index $version.data "pythonVersions" }}
+        <li>
+          <a class="blue link" href="#{{ $version.name }}-{{ $pythonVersion.name }}">
+            {{ $version.name }} for {{ $pythonVersion.name }}
+          </a>
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+
+  Setup:
+
+  {{ highlight $projectData.setup "nix" ""}}
+
+  Tests:
+
+  {{ highlight $projectData.tests "py" ""}}
+
+  {{ range $version := $projectData.versions }}
+    {{ range $pythonVersion := index $version.data "pythonVersions" }}
+
+      <hr id="{{ $version.name }}-{{ $pythonVersion.name }}" />
+
+      <a class="blue link" href="#{{ $version.name }}-{{ $pythonVersion.name }}">
+        Information about {{ $projectData.title }},
+        version "{{ $version.name }}" for {{ $pythonVersion.name }}
+      </a><br/>
+
+      Example on Nix stable:
+
+      {{ highlight $pythonVersion.data.demo.nixStable "nix" ""}}
+
+      Example on Nix unstable with flakes enabled:
+
+      {{ highlight $pythonVersion.data.demo.nixUnstable "nix" ""}}
+
+      Closure:
+      <ul>
+        {{ range $project, $version := $pythonVersion.data.closure }}
+          <li>
+            <a
+              class="blue link"
+              href="/projects/{{ $project }}#{{ $version }}-{{ $pythonVersion.name }}"
+            >
+              {{ $project }} == {{ $version }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+
+    {{ end }}
+  {{ end }}
+{{ end }}
