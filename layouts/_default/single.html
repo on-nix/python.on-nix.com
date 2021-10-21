@@ -2,6 +2,14 @@
   {{ .Params.project }} - Python on Nix
 {{ end }}
 
+{{ define "nav-title"}}
+  Python on Nix
+{{ end }}
+
+{{ define "nav-subtitle"}}
+  Everything you need to run your Python code on Nix
+{{ end }}
+
 {{ define "main" }}
   {{ $projectData := index $.Site.Data.projects .Params.project }}
 
