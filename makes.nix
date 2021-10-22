@@ -6,7 +6,7 @@
     prod = true;
 
     pythonOnNixRef = "main";
-    pythonOnNixRev = "27684f3486de58fc928897d91520223bee17277c";
+    pythonOnNixRev = "8afcf754a19b59200f3b3e006e90d4a297e08a7e";
     pythonOnNixUrl = "https://github.com/on-nix/python";
     pythonOnNix = import
       (builtins.fetchGit {
