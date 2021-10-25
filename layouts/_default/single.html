@@ -41,11 +41,30 @@
     {{ highlight $projectData.meta.license "nix" ""}}
   {{ end }}
 
-  Custom Nix configuration:
+  {{ if $projectData.tests }}
+    Custom Python tests:
 
-  {{ highlight $projectData.setup "nix" ""}}
+    {{ highlight $projectData.tests "py" ""}}
+  {{ end }}
 
-  Custom Python tests:
+  {{ if $projectData.setup }}
+    Custom Nix configuration:
 
-  {{ highlight $projectData.tests "py" ""}}
+    {{ highlight $projectData.setup "nix" ""}}
+  {{ end }}
+
+  {{ if $projectData.pythonVersion.data.closure }}
+    Required Python dependencies:
+
+    <ul>
+      {{ range $project, $version := $projectData.pythonVersion.data.closure }}
+        <li>
+          <a class="blue" href="/projects/{{ $project }}-{{ $version }}-{{ $projectData.pythonVersion.name }}">
+            {{ $project }} == {{ $version }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
 {{ end }}

@@ -26,7 +26,7 @@ let
       setup =
         if builtins.pathExists projectMeta.setupPath
         then builtins.readFile projectMeta.setupPath
-        else "{ }";
+        else null;
       tests = builtins.readFile projectMeta.testPath;
       versions = toSemverList
         (builtins.mapAttrs
