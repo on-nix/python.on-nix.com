@@ -35,88 +35,18 @@ let
               (builtins.removeAttrs
                 (builtins.mapAttrs
                   (pythonVersion: pythonVersionMeta: {
-                    demo = {
-                      nixStable = ''
-                        let
-                          # import the project
-                          nixpkgs = import <nixpkgs> { };
-                          pythonOnNix = import
-                            (builtins.fetchGit {
-                              ref = "${inputs.pythonOnNixRef}";
-                              rev = "${inputs.pythonOnNixRev}";
-                              url = "${inputs.pythonOnNixUrl}";
-                            })
-                            {
-                              # You can override `nixpkgs` here,
-                              # or omit it to use the one bundled with Python on Nix
-                              inherit nixpkgs;
-                            };
-
-                          # Create a Python on Nix environment
-                          env = pythonOnNix.${pythonVersion}Env {
-                            name = "example";
-                            projects = {
-                              "${project}" = "${version}";
-                            };
-                          };
-                        in
-                        nixpkgs.stdenv.mkDerivation {
-                          buildInputs = [ env ];
-                          builder = builtins.toFile "builder.sh" '''
-                            source $stdenv/setup
-
-                            # ${project} is now available here!
-
-                            touch $out
-                          ''';
-                          name = "example";
-                        }
-                      '';
-                      nixUnstable = ''
-                        {
-                          inputs = {
-                            flakeUtils.url = "github:numtide/flake-utils";
-                            nixpkgs.url = "github:nixos/nixpkgs";
-                            pythonOnNix.url = "github:on-nix/python/${inputs.pythonOnNixRev}";
-                          };
-                          outputs = { self, ... } @ inputs:
-                            inputs.flakeUtils.lib.eachSystem [ "x86_64-linux" ] (system:
-                              let
-                                nixpkgs = inputs.nixpkgs.legacyPackages.''${system};
-                                pythonOnNix = inputs.pythonOnNix.lib {
-                                  # You can also omit this parameter
-                                  # in order to use a default `nixpkgs` bundled with Python on Nix
-                                  inherit nixpkgs;
-                                  inherit system;
-                                };
-                              in
-                              {
-                                packages = rec {
-
-                                  example = (pythonOnNix.${pythonVersion}Env {
-                                    name = "example";
-                                    projects = {
-                                      "${project}" = "${version}";
-                                    };
-                                  }).dev;
-
-                                  something = nixpkgs.stdenv.mkDerivation {
-                                    buildInputs = [ example ];
-                                    builder = builtins.toFile "builder.sh" '''
-                                      source $stdenv/setup
-
-                                      # ${project} is now available here!
-
-                                      touch $out
-                                    ''';
-                                    name = "something";
-                                  };
-
-                                };
-                              }
-                            );
-                        }
-                      '';
+                    demos = {
+                      tryItOut = {
+                        stable = ''
+                          $ nix-shell \
+                            --attr 'projects."${project}"."${version}".${pythonVersion}.dev' \
+                            'https://github.com/on-nix/python/tarball/${inputs.pythonOnNixRev}'
+                        '';
+                        flakes = ''
+                          $ nix develop \
+                            'github:on-nix/python/${inputs.pythonOnNixRev}#"${project}-${version}-${pythonVersion}"'
+                        '';
+                      };
                     };
                     nameShort = {
                       "python36" = "36";
@@ -136,6 +66,7 @@ let
     (if inputs.prod
     then inputs.pythonOnNix.projectsMeta
     else {
+      about-time = inputs.pythonOnNix.projectsMeta.about-time;
       botocore = inputs.pythonOnNix.projectsMeta.botocore;
       django = inputs.pythonOnNix.projectsMeta.django;
     });
