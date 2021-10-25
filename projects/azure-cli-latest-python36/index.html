@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      
+  Using azure-cli latest for python36 on Nix
+
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" href=/styles.min.css />
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Raleway' type='text/css'>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/on-nix/artwork/8981511eb429c4fe2d772347cd3efe493ef7f670/logo/favicon.ico" />
+  </head>
+  <body class="bg-white f4 font lh-copy">
+
+    <nav class="bg-black w-100">
+      <a class="b f2 link pl2 white" href="/">
+        
+  Python on Nix
+
+        </a>
+      </nav>
+
+      <nav class="bg-cyan pa0 shadow-1 w-100">
+        <p class="black ma0 pa0 pl2">
+          
+  Everything you need to run your Python code on Nix
+
+        </p>
+      </nav>
+
+    <div class="pl1">
+      <div class="pa1">
+        
+  
+
+  <p class="ma1">
+    <dfn class="b fs-normal">
+      azure-cli latest for python36
+    </dfn>
+    = Microsoft Azure Command-Line Tools
+  </p>
+
+  <ul>
+    <li>
+      <a class="blue link" href="https://pypi.org/project/azure-cli">
+        https://pypi.org/project/azure-cli
+      </a>
+    </li>
+    
+      <li>
+        <a class="blue link" href=https://github.com/Azure/azure-cli>
+          https://github.com/Azure/azure-cli
+        </a>
+      </li>
+    
+  </ul>
+
+  
+    Project license:
+
+    <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nix" data-lang="nix">MIT</code></pre></td></tr></table>
+</div>
+</div>
+  
+
+  
+
+  
+    Custom Nix configuration:
+
+    <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nix" data-lang="nix">{
+  patchClosure = closure: builtins.removeAttrs closure [ <span style="color:#a31515">&#34;pywin32&#34;</span> ];
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+  
+
+  
+    Required Python dependencies:
+
+    <ul>
+      
+        <li>
+          <a class="blue" href="/projects/adal-1.2.7-python36">
+            adal == 1.2.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/antlr4-python3-runtime-4.7.2-python36">
+            antlr4-python3-runtime == 4.7.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/applicationinsights-0.11.10-python36">
+            applicationinsights == 0.11.10
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/argcomplete-1.12.3-python36">
+            argcomplete == 1.12.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-appconfiguration-1.1.1-python36">
+            azure-appconfiguration == 1.1.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-batch-11.0.0-python36">
+            azure-batch == 11.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-cli-core-2.29.0-python36">
+            azure-cli-core == 2.29.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-cli-telemetry-1.0.6-python36">
+            azure-cli-telemetry == 1.0.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-common-1.1.27-python36">
+            azure-common == 1.1.27
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-core-1.19.0-python36">
+            azure-core == 1.19.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-cosmos-3.2.0-python36">
+            azure-cosmos == 3.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-datalake-store-0.0.52-python36">
+            azure-datalake-store == 0.0.52
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-functions-devops-build-0.0.22-python36">
+            azure-functions-devops-build == 0.0.22
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-graphrbac-0.60.0-python36">
+            azure-graphrbac == 0.60.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-identity-1.6.1-python36">
+            azure-identity == 1.6.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-keyvault-1.1.0-python36">
+            azure-keyvault == 1.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-keyvault-administration-4.0.0b3-python36">
+            azure-keyvault-administration == 4.0.0b3
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-keyvault-keys-4.4.0-python36">
+            azure-keyvault-keys == 4.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-loganalytics-0.1.0-python36">
+            azure-loganalytics == 0.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-advisor-9.0.0-python36">
+            azure-mgmt-advisor == 9.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-apimanagement-0.2.0-python36">
+            azure-mgmt-apimanagement == 0.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-appconfiguration-2.0.0-python36">
+            azure-mgmt-appconfiguration == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-applicationinsights-1.0.0-python36">
+            azure-mgmt-applicationinsights == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-authorization-0.61.0-python36">
+            azure-mgmt-authorization == 0.61.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-batch-16.0.0-python36">
+            azure-mgmt-batch == 16.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-batchai-7.0.0b1-python36">
+            azure-mgmt-batchai == 7.0.0b1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-billing-6.0.0-python36">
+            azure-mgmt-billing == 6.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-botservice-0.3.0-python36">
+            azure-mgmt-botservice == 0.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-cdn-11.0.0-python36">
+            azure-mgmt-cdn == 11.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-cognitiveservices-12.0.0-python36">
+            azure-mgmt-cognitiveservices == 12.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-compute-23.0.0-python36">
+            azure-mgmt-compute == 23.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-consumption-2.0.0-python36">
+            azure-mgmt-consumption == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-containerinstance-9.0.0-python36">
+            azure-mgmt-containerinstance == 9.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-containerregistry-8.1.0-python36">
+            azure-mgmt-containerregistry == 8.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-containerservice-16.1.0-python36">
+            azure-mgmt-containerservice == 16.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-core-1.2.2-python36">
+            azure-mgmt-core == 1.2.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-cosmosdb-6.4.0-python36">
+            azure-mgmt-cosmosdb == 6.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-databoxedge-1.0.0-python36">
+            azure-mgmt-databoxedge == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-datalake-analytics-0.2.1-python36">
+            azure-mgmt-datalake-analytics == 0.2.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-datalake-nspkg-3.0.1-python36">
+            azure-mgmt-datalake-nspkg == 3.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-datalake-store-0.5.0-python36">
+            azure-mgmt-datalake-store == 0.5.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-datamigration-9.0.0-python36">
+            azure-mgmt-datamigration == 9.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-deploymentmanager-0.2.0-python36">
+            azure-mgmt-deploymentmanager == 0.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-devtestlabs-4.0.0-python36">
+            azure-mgmt-devtestlabs == 4.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-dns-8.0.0-python36">
+            azure-mgmt-dns == 8.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-eventgrid-9.0.0-python36">
+            azure-mgmt-eventgrid == 9.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-eventhub-9.1.0-python36">
+            azure-mgmt-eventhub == 9.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-extendedlocation-1.0.0-python36">
+            azure-mgmt-extendedlocation == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-hdinsight-8.0.0-python36">
+            azure-mgmt-hdinsight == 8.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-imagebuilder-0.4.0-python36">
+            azure-mgmt-imagebuilder == 0.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-iotcentral-9.0.0b1-python36">
+            azure-mgmt-iotcentral == 9.0.0b1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-iothub-2.1.0-python36">
+            azure-mgmt-iothub == 2.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-iothubprovisioningservices-0.3.0-python36">
+            azure-mgmt-iothubprovisioningservices == 0.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-keyvault-9.1.0-python36">
+            azure-mgmt-keyvault == 9.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-kusto-0.3.0-python36">
+            azure-mgmt-kusto == 0.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-loganalytics-11.0.0-python36">
+            azure-mgmt-loganalytics == 11.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-managedservices-1.0.0-python36">
+            azure-mgmt-managedservices == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-managementgroups-0.2.0-python36">
+            azure-mgmt-managementgroups == 0.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-maps-2.0.0-python36">
+            azure-mgmt-maps == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-marketplaceordering-1.1.0-python36">
+            azure-mgmt-marketplaceordering == 1.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-media-7.0.0-python36">
+            azure-mgmt-media == 7.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-monitor-2.0.0-python36">
+            azure-mgmt-monitor == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-msi-0.2.0-python36">
+            azure-mgmt-msi == 0.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-netapp-4.0.0-python36">
+            azure-mgmt-netapp == 4.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-network-19.0.0-python36">
+            azure-mgmt-network == 19.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-nspkg-3.0.2-python36">
+            azure-mgmt-nspkg == 3.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-policyinsights-1.0.0-python36">
+            azure-mgmt-policyinsights == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-privatedns-1.0.0-python36">
+            azure-mgmt-privatedns == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-rdbms-9.1.0-python36">
+            azure-mgmt-rdbms == 9.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-recoveryservices-2.0.0-python36">
+            azure-mgmt-recoveryservices == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-recoveryservicesbackup-0.15.0-python36">
+            azure-mgmt-recoveryservicesbackup == 0.15.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-redhatopenshift-1.0.0-python36">
+            azure-mgmt-redhatopenshift == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-redis-13.0.0-python36">
+            azure-mgmt-redis == 13.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-relay-0.1.0-python36">
+            azure-mgmt-relay == 0.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-reservations-0.6.0-python36">
+            azure-mgmt-reservations == 0.6.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-resource-19.0.0-python36">
+            azure-mgmt-resource == 19.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-search-8.0.0-python36">
+            azure-mgmt-search == 8.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-security-2.0.0b1-python36">
+            azure-mgmt-security == 2.0.0b1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-servicebus-6.0.0-python36">
+            azure-mgmt-servicebus == 6.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-servicefabric-1.0.0-python36">
+            azure-mgmt-servicefabric == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-servicefabricmanagedclusters-1.0.0-python36">
+            azure-mgmt-servicefabricmanagedclusters == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-signalr-1.0.0b2-python36">
+            azure-mgmt-signalr == 1.0.0b2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-sql-3.0.1-python36">
+            azure-mgmt-sql == 3.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-sqlvirtualmachine-1.0.0b1-python36">
+            azure-mgmt-sqlvirtualmachine == 1.0.0b1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-storage-19.0.0-python36">
+            azure-mgmt-storage == 19.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-synapse-2.0.0-python36">
+            azure-mgmt-synapse == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-trafficmanager-0.51.0-python36">
+            azure-mgmt-trafficmanager == 0.51.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-mgmt-web-4.0.0-python36">
+            azure-mgmt-web == 4.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-multiapi-storage-0.6.2-python36">
+            azure-multiapi-storage == 0.6.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-nspkg-3.0.2-python36">
+            azure-nspkg == 3.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-storage-common-1.4.2-python36">
+            azure-storage-common == 1.4.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-synapse-accesscontrol-0.5.0-python36">
+            azure-synapse-accesscontrol == 0.5.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-synapse-artifacts-0.8.0-python36">
+            azure-synapse-artifacts == 0.8.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-synapse-managedprivateendpoints-0.3.0-python36">
+            azure-synapse-managedprivateendpoints == 0.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/azure-synapse-spark-0.2.0-python36">
+            azure-synapse-spark == 0.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/bcrypt-3.2.0-python36">
+            bcrypt == 3.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/certifi-2021.10.8-python36">
+            certifi == 2021.10.8
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/cffi-1.14.6-python36">
+            cffi == 1.14.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/chardet-3.0.4-python36">
+            chardet == 3.0.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/colorama-0.4.4-python36">
+            colorama == 0.4.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/cryptography-35.0.0-python36">
+            cryptography == 35.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/deprecated-1.2.13-python36">
+            deprecated == 1.2.13
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/distro-1.6.0-python36">
+            distro == 1.6.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/fabric-2.6.0-python36">
+            fabric == 2.6.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/humanfriendly-9.2-python36">
+            humanfriendly == 9.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/idna-2.10-python36">
+            idna == 2.10
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/importlib-metadata-4.8.1-python36">
+            importlib-metadata == 4.8.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/invoke-1.6.0-python36">
+            invoke == 1.6.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/isodate-0.6.0-python36">
+            isodate == 0.6.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/javaproperties-0.5.2-python36">
+            javaproperties == 0.5.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/jinja2-3.0.2-python36">
+            jinja2 == 3.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/jmespath-0.10.0-python36">
+            jmespath == 0.10.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/jsondiff-1.2.0-python36">
+            jsondiff == 1.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/knack-0.8.2-python36">
+            knack == 0.8.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/markupsafe-2.0.1-python36">
+            markupsafe == 2.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/msal-1.15.0-python36">
+            msal == 1.15.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/msal-extensions-0.3.0-python36">
+            msal-extensions == 0.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/msrest-0.6.21-python36">
+            msrest == 0.6.21
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/msrestazure-0.6.4-python36">
+            msrestazure == 0.6.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/oauthlib-3.1.1-python36">
+            oauthlib == 3.1.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/packaging-20.9-python36">
+            packaging == 20.9
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/paramiko-2.8.0-python36">
+            paramiko == 2.8.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pathlib2-2.3.6-python36">
+            pathlib2 == 2.3.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pkginfo-1.7.1-python36">
+            pkginfo == 1.7.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/portalocker-1.7.1-python36">
+            portalocker == 1.7.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/psutil-5.8.0-python36">
+            psutil == 5.8.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pycparser-2.20-python36">
+            pycparser == 2.20
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pygithub-1.55-python36">
+            pygithub == 1.55
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pygments-2.10.0-python36">
+            pygments == 2.10.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pyjwt-2.2.0-python36">
+            pyjwt == 2.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pynacl-1.4.0-python36">
+            pynacl == 1.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pyopenssl-21.0.0-python36">
+            pyopenssl == 21.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pyparsing-2.4.7-python36">
+            pyparsing == 2.4.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pysocks-1.7.1-python36">
+            pysocks == 1.7.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/python-dateutil-2.8.2-python36">
+            python-dateutil == 2.8.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pytz-2019.1-python36">
+            pytz == 2019.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/pyyaml-5.4.1-python36">
+            pyyaml == 5.4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/requests-2.25.1-python36">
+            requests == 2.25.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/requests-oauthlib-1.3.0-python36">
+            requests-oauthlib == 1.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/scp-0.13.6-python36">
+            scp == 0.13.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/semver-2.13.0-python36">
+            semver == 2.13.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/six-1.16.0-python36">
+            six == 1.16.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/sshtunnel-0.1.5-python36">
+            sshtunnel == 0.1.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/tabulate-0.8.9-python36">
+            tabulate == 0.8.9
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/typing-extensions-3.10.0.2-python36">
+            typing-extensions == 3.10.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/urllib3-1.26.7-python36">
+            urllib3 == 1.26.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/vsts-0.1.25-python36">
+            vsts == 0.1.25
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/websocket-client-0.56.0-python36">
+            websocket-client == 0.56.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/wrapt-1.13.2-python36">
+            wrapt == 1.13.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/xmltodict-0.12.0-python36">
+            xmltodict == 0.12.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="blue" href="/projects/zipp-3.6.0-python36">
+            zipp == 3.6.0
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  Try it out:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nix-shell <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  --attr <span style="color:#a31515">&#39;projects.&#34;azure-cli&#34;.&#34;latest&#34;.python36.dev&#39;</span> <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;https://github.com/on-nix/python/tarball/0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nix develop <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;github:on-nix/python/0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff#&#34;azure-cli-latest-python36&#34;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+  Install azure-cli's command line applications in your system:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nix-env --install <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  --attr <span style="color:#a31515">&#39;apps.&#34;azure-cli&#34;.&#34;latest&#34;&#39;</span> <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  --file <span style="color:#a31515">&#39;https://github.com/on-nix/python/tarball/0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nix profile install <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;github:on-nix/python#&#34;azure-cli-latest-python36-bin&#34;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+  Use many Python projects together:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#008000"># Save this file as: ./example.nix</span>
+
+let
+  <span style="color:#008000"># Import Nixpkgs</span>
+  nixpkgs = import &lt;nixpkgs&gt; { };
+
+  <span style="color:#008000"># Import Python on Nix</span>
+  pythonOnNix = import
+    (builtins.fetchGit {
+      ref = <span style="color:#a31515">&#34;main&#34;</span>;
+      rev = <span style="color:#a31515">&#34;0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff&#34;</span>;
+      url = <span style="color:#a31515">&#34;https://github.com/on-nix/python&#34;</span>;
+    })
+    { inherit nixpkgs; };
+
+  env = pythonOnNix.python36Env {
+    name = <span style="color:#a31515">&#34;example&#34;</span>;
+    projects = {
+      <span style="color:#a31515">&#34;azure-cli&#34;</span> = <span style="color:#a31515">&#34;latest&#34;</span>;
+      <span style="color:#008000"># You can add more projects here as you need</span>
+      <span style="color:#008000"># &#34;a&#34; = &#34;1.0&#34;;</span>
+      <span style="color:#008000"># &#34;b&#34; = &#34;2.0&#34;;</span>
+      <span style="color:#008000"># ...</span>
+    };
+  };
+
+  <span style="color:#008000"># `env` has two attributes:</span>
+  <span style="color:#008000"># - dev: The activation script for the Python on Nix environment</span>
+  <span style="color:#008000"># - out: The raw contents of the Python site-packages</span>
+in
+{
+  <span style="color:#008000"># The activation script can be used as dev-shell</span>
+  shell = env.dev;
+
+  <span style="color:#008000"># You can also use with Nixpkgs</span>
+  example = nixpkgs.stdenv.mkDerivation {
+    <span style="color:#008000"># Let&#39;s use the activation script as build input</span>
+    <span style="color:#008000"># so the Python environment is loaded</span>
+    buildInputs = [ env.dev ];
+
+    builder = builtins.toFile <span style="color:#a31515">&#34;builder.sh&#34;</span> <span style="color:#a31515">&#39;&#39;</span>
+      source $stdenv/setup
+
+      <span style="color:#008000"># azure-cli will be available here!</span>
+
+      touch $out
+    <span style="color:#a31515">&#39;&#39;</span>;
+    name = <span style="color:#a31515">&#34;example&#34;</span>;
+  };
+}
+
+<span style="color:#008000"># Usage:</span>
+#
+<span style="color:#008000">#   Dev Shell:</span>
+<span style="color:#008000">#     $ nix-shell --attr shell ./example.nix</span>
+#
+<span style="color:#008000">#   Build example:</span>
+<span style="color:#008000">#     $ nix-build --attr example ./example.nix</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#008000"># Save this file as: ./flake.nix</span>
+
+{
+  inputs = {
+    flakeUtils.url = <span style="color:#a31515">&#34;github:numtide/flake-utils&#34;</span>;
+    nixpkgs.url = <span style="color:#a31515">&#34;github:nixos/nixpkgs&#34;</span>;
+    pythonOnNix.url = <span style="color:#a31515">&#34;github:on-nix/python/0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff&#34;</span>;
+    pythonOnNix.inputs.nixpkgs.follows = <span style="color:#a31515">&#34;nixpkgs&#34;</span>;
+  };
+  outputs = { self, ... } @ inputs:
+    inputs.flakeUtils.lib.eachSystem [ <span style="color:#a31515">&#34;x86_64-linux&#34;</span> ] (system:
+      let
+        nixpkgs = inputs.nixpkgs.legacyPackages.<span style="color:#a31515">${</span>system<span style="color:#a31515">}</span>;
+        pythonOnNix = inputs.pythonOnNix.lib.<span style="color:#a31515">${</span>system<span style="color:#a31515">}</span>;
+
+        env = pythonOnNix.python36Env {
+          name = <span style="color:#a31515">&#34;example&#34;</span>;
+          projects = {
+            <span style="color:#a31515">&#34;azure-cli&#34;</span> = <span style="color:#a31515">&#34;latest&#34;</span>;
+            <span style="color:#008000"># You can add more projects here as you need</span>
+            <span style="color:#008000"># &#34;a&#34; = &#34;1.0&#34;;</span>
+            <span style="color:#008000"># &#34;b&#34; = &#34;2.0&#34;;</span>
+            <span style="color:#008000"># ...</span>
+          };
+        };
+        <span style="color:#008000"># `env` has two attributes:</span>
+        <span style="color:#008000"># - dev: The activation script for the Python on Nix environment</span>
+        <span style="color:#008000"># - out: The raw contents of the Python site-packages</span>
+      in
+      {
+        devShells = {
+
+          <span style="color:#008000"># The activation script can be used as dev-shell</span>
+          shell = env.dev;
+
+        };
+
+        packages = {
+
+          <span style="color:#008000"># You can also use with Nixpkgs</span>
+          example = nixpkgs.stdenv.mkDerivation {
+            <span style="color:#008000"># Let&#39;s use the activation script as build input</span>
+            <span style="color:#008000"># so the Python environment is loaded</span>
+            buildInputs = [ env.dev ];
+            virtualEnvironment = env.out;
+
+            builder = builtins.toFile <span style="color:#a31515">&#34;builder.sh&#34;</span> <span style="color:#a31515">&#39;&#39;</span>
+              source $stdenv/setup
+
+              <span style="color:#008000"># azure-cli will be available here!</span>
+
+              touch $out
+            <span style="color:#a31515">&#39;&#39;</span>;
+            name = <span style="color:#a31515">&#34;example&#34;</span>;
+          };
+
+        };
+      }
+    );
+}
+
+<span style="color:#008000"># Usage:</span>
+<span style="color:#008000">#   First add your changes:</span>
+<span style="color:#008000">#     $ git add flake.nix</span>
+#
+<span style="color:#008000">#   Dev Shell:</span>
+<span style="color:#008000">#     $ nix develop .#shell</span>
+#
+<span style="color:#008000">#   Build example:</span>
+<span style="color:#008000">#     $ nix build .#example</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+
+      </div>
+    </div>
+
+    
+    
+  </body>
+</html>

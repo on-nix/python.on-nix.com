@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <link rel="preload" as="style" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+    >
+    <link rel="preload" as="style" type="text/css"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    >
+
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+    >
+    <link rel="stylesheet" type="text/css"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    >
+    <link rel="shortcut icon"
+      href="https://raw.githubusercontent.com/on-nix/artwork/8981511eb429c4fe2d772347cd3efe493ef7f670/logo/favicon.ico"
+    />
+
+    <style>
+      :root {
+        --prim: #292929;
+        --prim-d: #000000;
+        --prim-l: #515151;
+        --sec: #76ffff;
+        --sec-d: #0288d1;
+        --sec-l: #ffffff;
+      }
+
+       
+      .bg-prim { background-color: var(--prim); }
+      .bg-prim-d { background-color: var(--prim-d); }
+      .bg-prim-l { background-color: var(--prim-l); }
+      .bg-sec { background-color: var(--sec); }
+      .bg-sec-d { background-color: var(--sec-d); }
+      .bg-sec-l { background-color: var(--sec-l); }
+
+      .b--prim { border-color: var(--prim); }
+      .b--prim-d { border-color: var(--prim-d); }
+      .b--prim-l { border-color: var(--prim-l); }
+      .b--sec { border-color: var(--sec); }
+      .b--sec-d { border-color: var(--sec-d); }
+      .b--sec-l { border-color: var(--sec-l); }
+
+      .prim { color: var(--prim); }
+      .prim-d { color: var(--prim-d); }
+      .prim-l { color: var(--prim-l); }
+      .sec { color: var(--sec); }
+      .sec-d { color: var(--sec-d); }
+      .sec-l { color: var(--sec-l); }
+
+       
+      a:link { text-decoration: none; }
+      a:visited { text-decoration: none; }
+      a:hover { text-decoration: none; }
+    </style>
+
+    <title>
+      
+  Using feedgenerator 1.9.2 for python38 on Nix
+
+    </title>
+  </head>
+  <body class="f4 lh-copy" style="font-family: Raleway;">
+
+    <nav class="bg-prim-d pa0 w-100">
+      <p class="b f2 ma0 pv0 pl2">
+        <a class="sec-l" href="/">
+          
+  Python on Nix
+
+        </a>
+      </p>
+    </nav>
+
+    <nav class="bg-sec pa0 shadow-1 w-100">
+      <p class="prim-d ma0 pv0 pl2">
+        
+  Everything you need to run your Python code on Nix
+
+      </p>
+    </nav>
+
+    <div class="pa1">
+      
+  
+
+  <p class="ma1">
+    <dfn class="b fs-normal">
+      feedgenerator 1.9.2 for python38
+    </dfn>
+    = Standalone version of django.utils.feedgenerator
+  </p>
+
+  <ul>
+    <li>
+      <a class="sec-d" href="https://pypi.org/project/feedgenerator">
+        https://pypi.org/project/feedgenerator
+      </a>
+    </li>
+    
+      <li>
+        <a class="sec-d" href=https://github.com/getpelican/feedgenerator>
+          https://github.com/getpelican/feedgenerator
+        </a>
+      </li>
+    
+  </ul>
+
+  
+
+  
+    Custom Python tests:
+
+    <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#00f">import</span> feedgenerator
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  
+
+  
+
+  
+    Required Python dependencies:
+
+    <ul>
+      
+        <li>
+          <a class="sec-d" href="/projects/pytz-2021.1-python38/">
+            pytz == 2021.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/six-1.16.0-python38/">
+            six == 1.16.0
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  Try it out:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nix-shell <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  --attr <span style="color:#a31515">&#39;projects.&#34;feedgenerator&#34;.&#34;1.9.2&#34;.python38.dev&#39;</span> <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;https://github.com/on-nix/python/tarball/d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nix develop <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;github:on-nix/python/d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed#&#34;feedgenerator-1.9.2-python38&#34;&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+  Install feedgenerator's command line applications in your system:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nix-env --install <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  --attr <span style="color:#a31515">&#39;apps.&#34;feedgenerator&#34;.&#34;1.9.2&#34;&#39;</span> <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  --file <span style="color:#a31515">&#39;https://github.com/on-nix/python/tarball/d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nix profile install <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;github:on-nix/python#&#34;feedgenerator-1.9.2-python38-bin&#34;&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+  Use many Python projects together:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#008000"># Save this file as: ./example.nix</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># Import Nixpkgs</span>
+</span></span><span style="display:flex;"><span>  nixpkgs = import &lt;nixpkgs&gt; { };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># Import Python on Nix</span>
+</span></span><span style="display:flex;"><span>  pythonOnNix = import
+</span></span><span style="display:flex;"><span>    (builtins.fetchGit {
+</span></span><span style="display:flex;"><span>      ref = <span style="color:#a31515">&#34;main&#34;</span>;
+</span></span><span style="display:flex;"><span>      rev = <span style="color:#a31515">&#34;d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed&#34;</span>;
+</span></span><span style="display:flex;"><span>      url = <span style="color:#a31515">&#34;https://github.com/on-nix/python&#34;</span>;
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    { inherit nixpkgs; };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  env = pythonOnNix.python38Env {
+</span></span><span style="display:flex;"><span>    name = <span style="color:#a31515">&#34;example&#34;</span>;
+</span></span><span style="display:flex;"><span>    projects = {
+</span></span><span style="display:flex;"><span>      <span style="color:#a31515">&#34;feedgenerator&#34;</span> = <span style="color:#a31515">&#34;1.9.2&#34;</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># You can add more projects here as you need</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># &#34;a&#34; = &#34;1.0&#34;;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># &#34;b&#34; = &#34;2.0&#34;;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># ...</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># `env` has two attributes:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># - dev: The activation script for the Python on Nix environment</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># - out: The raw contents of the Python site-packages</span>
+</span></span><span style="display:flex;"><span>in
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># The activation script can be used as dev-shell</span>
+</span></span><span style="display:flex;"><span>  shell = env.dev;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># You can also use with Nixpkgs</span>
+</span></span><span style="display:flex;"><span>  example = nixpkgs.stdenv.mkDerivation {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000"># Let&#39;s use the activation script as build input</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000"># so the Python environment is loaded</span>
+</span></span><span style="display:flex;"><span>    buildInputs = [ env.dev ];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    builder = builtins.toFile <span style="color:#a31515">&#34;builder.sh&#34;</span> <span style="color:#a31515">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>      source $stdenv/setup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># feedgenerator will be available here!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      touch $out
+</span></span><span style="display:flex;"><span>    <span style="color:#a31515">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    name = <span style="color:#a31515">&#34;example&#34;</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000"># Usage:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   Dev Shell:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ nix-shell --attr shell ./example.nix</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   Build example:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ nix-build --attr example ./example.nix</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#008000"># Save this file as: ./flake.nix</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  inputs = {
+</span></span><span style="display:flex;"><span>    flakeUtils.url = <span style="color:#a31515">&#34;github:numtide/flake-utils&#34;</span>;
+</span></span><span style="display:flex;"><span>    nixpkgs.url = <span style="color:#a31515">&#34;github:nixos/nixpkgs&#34;</span>;
+</span></span><span style="display:flex;"><span>    pythonOnNix.url = <span style="color:#a31515">&#34;github:on-nix/python/d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed&#34;</span>;
+</span></span><span style="display:flex;"><span>    pythonOnNix.inputs.nixpkgs.follows = <span style="color:#a31515">&#34;nixpkgs&#34;</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>  outputs = { self, ... } @ inputs:
+</span></span><span style="display:flex;"><span>    inputs.flakeUtils.lib.eachSystem [ <span style="color:#a31515">&#34;x86_64-linux&#34;</span> ] (system:
+</span></span><span style="display:flex;"><span>      let
+</span></span><span style="display:flex;"><span>        nixpkgs = inputs.nixpkgs.legacyPackages.<span style="color:#a31515">${</span>system<span style="color:#a31515">}</span>;
+</span></span><span style="display:flex;"><span>        pythonOnNix = inputs.pythonOnNix.lib.<span style="color:#a31515">${</span>system<span style="color:#a31515">}</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        env = pythonOnNix.python38Env {
+</span></span><span style="display:flex;"><span>          name = <span style="color:#a31515">&#34;example&#34;</span>;
+</span></span><span style="display:flex;"><span>          projects = {
+</span></span><span style="display:flex;"><span>            <span style="color:#a31515">&#34;feedgenerator&#34;</span> = <span style="color:#a31515">&#34;1.9.2&#34;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># You can add more projects here as you need</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># &#34;a&#34; = &#34;1.0&#34;;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># &#34;b&#34; = &#34;2.0&#34;;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># ...</span>
+</span></span><span style="display:flex;"><span>          };
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        <span style="color:#008000"># `env` has two attributes:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000"># - dev: The activation script for the Python on Nix environment</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000"># - out: The raw contents of the Python site-packages</span>
+</span></span><span style="display:flex;"><span>      in
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        devShells = {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#008000"># The activation script can be used as dev-shell</span>
+</span></span><span style="display:flex;"><span>          shell = env.dev;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        packages = {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#008000"># You can also use with Nixpkgs</span>
+</span></span><span style="display:flex;"><span>          example = nixpkgs.stdenv.mkDerivation {
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># Let&#39;s use the activation script as build input</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># so the Python environment is loaded</span>
+</span></span><span style="display:flex;"><span>            buildInputs = [ env.dev ];
+</span></span><span style="display:flex;"><span>            virtualEnvironment = env.out;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            builder = builtins.toFile <span style="color:#a31515">&#34;builder.sh&#34;</span> <span style="color:#a31515">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>              source $stdenv/setup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              <span style="color:#008000"># feedgenerator will be available here!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              touch $out
+</span></span><span style="display:flex;"><span>            <span style="color:#a31515">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>            name = <span style="color:#a31515">&#34;example&#34;</span>;
+</span></span><span style="display:flex;"><span>          };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000"># Usage:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   First add your changes:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ git add flake.nix</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   Dev Shell:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ nix develop .#shell</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   Build example:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ nix build .#example</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+
+    </div>
+
+    <div class="pv3"></div>
+
+    <div class="bt">
+      <div class="cf">
+        <div class="fl pb4 ph4 pt1 w-100 w-50-ns w-50-m w-25-l">
+          <p class="b bb">On Nix</p>
+          <a class="db sec-d" href="https://on-nix.com">Home</a>
+          <a class="db sec-d" href="https://pkgs.on-nix.com">Packages</a>
+          <a class="db sec-d" href="https://python.on-nix.com">Python</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 50px"></div>
+  </body>
+</html>

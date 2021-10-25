@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <link rel="preload" as="style" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+    >
+    <link rel="preload" as="style" type="text/css"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    >
+
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+    >
+    <link rel="stylesheet" type="text/css"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    >
+    <link rel="shortcut icon"
+      href="https://raw.githubusercontent.com/on-nix/artwork/8981511eb429c4fe2d772347cd3efe493ef7f670/logo/favicon.ico"
+    />
+
+    <style>
+      :root {
+        --prim: #292929;
+        --prim-d: #000000;
+        --prim-l: #515151;
+        --sec: #76ffff;
+        --sec-d: #0288d1;
+        --sec-l: #ffffff;
+      }
+
+       
+      .bg-prim { background-color: var(--prim); }
+      .bg-prim-d { background-color: var(--prim-d); }
+      .bg-prim-l { background-color: var(--prim-l); }
+      .bg-sec { background-color: var(--sec); }
+      .bg-sec-d { background-color: var(--sec-d); }
+      .bg-sec-l { background-color: var(--sec-l); }
+
+      .b--prim { border-color: var(--prim); }
+      .b--prim-d { border-color: var(--prim-d); }
+      .b--prim-l { border-color: var(--prim-l); }
+      .b--sec { border-color: var(--sec); }
+      .b--sec-d { border-color: var(--sec-d); }
+      .b--sec-l { border-color: var(--sec-l); }
+
+      .prim { color: var(--prim); }
+      .prim-d { color: var(--prim-d); }
+      .prim-l { color: var(--prim-l); }
+      .sec { color: var(--sec); }
+      .sec-d { color: var(--sec-d); }
+      .sec-l { color: var(--sec-l); }
+
+       
+      a:link { text-decoration: none; }
+      a:visited { text-decoration: none; }
+      a:hover { text-decoration: none; }
+    </style>
+
+    <title>
+      
+  Using plone-app-vocabularies latest for python39 on Nix
+
+    </title>
+  </head>
+  <body class="f4 lh-copy" style="font-family: Raleway;">
+
+    <nav class="bg-prim-d pa0 w-100">
+      <p class="b f2 ma0 pv0 pl2">
+        <a class="sec-l" href="/">
+          
+  Python on Nix
+
+        </a>
+      </p>
+    </nav>
+
+    <nav class="bg-sec pa0 shadow-1 w-100">
+      <p class="prim-d ma0 pv0 pl2">
+        
+  Everything you need to run your Python code on Nix
+
+      </p>
+    </nav>
+
+    <div class="pa1">
+      
+  
+
+  <p class="ma1">
+    <dfn class="b fs-normal">
+      plone-app-vocabularies latest for python39
+    </dfn>
+    = Collection of generally useful vocabularies for Plone.
+  </p>
+
+  <ul>
+    <li>
+      <a class="sec-d" href="https://pypi.org/project/plone-app-vocabularies">
+        https://pypi.org/project/plone-app-vocabularies
+      </a>
+    </li>
+    
+      <li>
+        <a class="sec-d" href=https://github.com/plone/plone.app.vocabularies>
+          https://github.com/plone/plone.app.vocabularies
+        </a>
+      </li>
+    
+  </ul>
+
+  
+    Project license:
+
+    <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nix" data-lang="nix"><span style="display:flex;"><span>GPL version 2</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  
+
+  
+
+  
+
+  
+    Required Python dependencies:
+
+    <ul>
+      
+        <li>
+          <a class="sec-d" href="/projects/accesscontrol-5.2-python39/">
+            accesscontrol == 5.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/acquisition-4.9-python39/">
+            acquisition == 4.9
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/attrs-21.2.0-python39/">
+            attrs == 21.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/authencoding-4.3-python39/">
+            authencoding == 4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/beautifulsoup4-4.10.0-python39/">
+            beautifulsoup4 == 4.10.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/borg-localrole-3.1.8-python39/">
+            borg-localrole == 3.1.8
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/btrees-4.9.2-python39/">
+            btrees == 4.9.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/calmjs-parse-1.2.5-python39/">
+            calmjs-parse == 1.2.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/cffi-1.14.6-python39/">
+            cffi == 1.14.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/chameleon-3.9.1-python39/">
+            chameleon == 3.9.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/collective-monkeypatcher-1.2.1-python39/">
+            collective-monkeypatcher == 1.2.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/cssselect-1.1.0-python39/">
+            cssselect == 1.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/datetime-4.3-python39/">
+            datetime == 4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/decorator-5.1.0-python39/">
+            decorator == 5.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/diazo-1.4.1-python39/">
+            diazo == 1.4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/documenttemplate-4.0-python39/">
+            documenttemplate == 4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/docutils-0.17.1-python39/">
+            docutils == 0.17.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/extensionclass-4.5.1-python39/">
+            extensionclass == 4.5.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/feedparser-6.0.8-python39/">
+            feedparser == 6.0.8
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/five-customerize-2.0.1-python39/">
+            five-customerize == 2.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/five-intid-1.2.6-python39/">
+            five-intid == 1.2.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/five-localsitemanager-3.2.2-python39/">
+            five-localsitemanager == 3.2.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/future-0.18.2-python39/">
+            future == 0.18.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/icalendar-4.0.7-python39/">
+            icalendar == 4.0.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/jsonschema-3.2.0-python39/">
+            jsonschema == 3.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/lxml-4.6.3-python39/">
+            lxml == 4.6.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/markdown-3.3.4-python39/">
+            markdown == 3.3.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/missing-4.1-python39/">
+            missing == 4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/mockup-3.2.6-python39/">
+            mockup == 3.2.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/multimapping-4.1-python39/">
+            multimapping == 4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/multipart-0.2.4-python39/">
+            multipart == 0.2.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/pastedeploy-2.1.1-python39/">
+            pastedeploy == 2.1.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/persistence-3.1-python39/">
+            persistence == 3.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/persistent-4.7.0-python39/">
+            persistent == 4.7.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/piexif-1.1.3-python39/">
+            piexif == 1.1.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/pillow-8.3.2-python39/">
+            pillow == 8.3.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-alterego-1.1.5-python39/">
+            plone-alterego == 1.1.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-api-1.11.0-python39/">
+            plone-api == 1.11.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-content-3.8.8-python39/">
+            plone-app-content == 3.8.8
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-contentlisting-2.0.4-python39/">
+            plone-app-contentlisting == 2.0.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-contentmenu-2.3.4-python39/">
+            plone-app-contentmenu == 2.3.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-contentrules-4.1.6-python39/">
+            plone-app-contentrules == 4.1.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-contenttypes-2.2.2-python39/">
+            plone-app-contenttypes == 2.2.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-customerize-1.3.11-python39/">
+            plone-app-customerize == 1.3.11
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-dexterity-2.6.9-python39/">
+            plone-app-dexterity == 2.6.9
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-discussion-3.4.4-python39/">
+            plone-app-discussion == 3.4.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-event-4.0.0a5-python39/">
+            plone-app-event == 4.0.0a5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-i18n-3.0.6-python39/">
+            plone-app-i18n == 3.0.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-intid-1.1.4-python39/">
+            plone-app-intid == 1.1.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-layout-3.4.6-python39/">
+            plone-app-layout == 3.4.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-linkintegrity-3.4.1-python39/">
+            plone-app-linkintegrity == 3.4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-locales-5.1.29-python39/">
+            plone-app-locales == 5.1.29
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-lockingbehavior-1.0.7-python39/">
+            plone-app-lockingbehavior == 1.0.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-multilingual-5.6.3-python39/">
+            plone-app-multilingual == 5.6.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-portlets-4.4.7-python39/">
+            plone-app-portlets == 4.4.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-querystring-1.4.15-python39/">
+            plone-app-querystring == 1.4.15
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-redirector-2.2.1-python39/">
+            plone-app-redirector == 2.2.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-registry-1.7.9-python39/">
+            plone-app-registry == 1.7.9
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-relationfield-2.0.3-python39/">
+            plone-app-relationfield == 2.0.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-textfield-1.3.5-python39/">
+            plone-app-textfield == 1.3.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-theming-4.1.7-python39/">
+            plone-app-theming == 4.1.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-users-2.6.6-python39/">
+            plone-app-users == 2.6.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-uuid-2.0.2-python39/">
+            plone-app-uuid == 2.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-versioningbehavior-1.4.3-python39/">
+            plone-app-versioningbehavior == 1.4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-viewletmanager-3.1.2-python39/">
+            plone-app-viewletmanager == 3.1.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-widgets-3.0.6-python39/">
+            plone-app-widgets == 3.0.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-workflow-4.0.4-python39/">
+            plone-app-workflow == 4.0.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-app-z3cform-3.2.2-python39/">
+            plone-app-z3cform == 3.2.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-autoform-1.9.0-python39/">
+            plone-autoform == 1.9.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-batching-1.1.7-python39/">
+            plone-batching == 1.1.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-behavior-1.4.0-python39/">
+            plone-behavior == 1.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-browserlayer-2.2.4-python39/">
+            plone-browserlayer == 2.2.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-caching-1.2.2-python39/">
+            plone-caching == 1.2.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-contentrules-2.1.2-python39/">
+            plone-contentrules == 2.1.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-dexterity-2.10.3-python39/">
+            plone-dexterity == 2.10.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-event-1.4.1-python39/">
+            plone-event == 1.4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-folder-3.1.0-python39/">
+            plone-folder == 3.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-formwidget-namedfile-2.1.3-python39/">
+            plone-formwidget-namedfile == 2.1.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-formwidget-recurrence-2.1.4-python39/">
+            plone-formwidget-recurrence == 2.1.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-i18n-5.0.0a1-python39/">
+            plone-i18n == 5.0.0a1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-indexer-1.0.7-python39/">
+            plone-indexer == 1.0.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-intelligenttext-3.1.0-python39/">
+            plone-intelligenttext == 3.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-keyring-3.1.3-python39/">
+            plone-keyring == 3.1.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-locking-2.2.4-python39/">
+            plone-locking == 2.2.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-memoize-2.1.1-python39/">
+            plone-memoize == 2.1.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-namedfile-5.5.1-python39/">
+            plone-namedfile == 5.5.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-outputfilters-4.0.2-python39/">
+            plone-outputfilters == 4.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-portlet-collection-3.3.6-python39/">
+            plone-portlet-collection == 3.3.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-portlet-static-3.1.6-python39/">
+            plone-portlet-static == 3.1.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-portlets-2.3.2-python39/">
+            plone-portlets == 2.3.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-protect-4.1.6-python39/">
+            plone-protect == 4.1.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-registry-1.2.1-python39/">
+            plone-registry == 1.2.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-resource-2.1.4-python39/">
+            plone-resource == 2.1.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-resourceeditor-3.0.3-python39/">
+            plone-resourceeditor == 3.0.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-rfc822-2.0.2-python39/">
+            plone-rfc822 == 2.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-scale-3.1.2-python39/">
+            plone-scale == 3.1.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-schema-1.3.0-python39/">
+            plone-schema == 1.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-schemaeditor-3.0.3-python39/">
+            plone-schemaeditor == 3.0.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-session-3.7.5-python39/">
+            plone-session == 3.7.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-staticresources-1.4.3-python39/">
+            plone-staticresources == 1.4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-stringinterp-1.3.3-python39/">
+            plone-stringinterp == 1.3.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-subrequest-1.9.3-python39/">
+            plone-subrequest == 1.9.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-supermodel-1.6.4-python39/">
+            plone-supermodel == 1.6.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-synchronize-1.0.4-python39/">
+            plone-synchronize == 1.0.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-theme-3.0.7-python39/">
+            plone-theme == 3.0.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-transformchain-2.0.2-python39/">
+            plone-transformchain == 2.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-uuid-1.0.6-python39/">
+            plone-uuid == 1.0.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plone-z3cform-2.0.0a1-python39/">
+            plone-z3cform == 2.0.0a1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/plonetheme-barceloneta-2.1.10-python39/">
+            plonetheme-barceloneta == 2.1.10
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/ply-3.11-python39/">
+            ply == 3.11
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-btreefolder2-4.3-python39/">
+            products-btreefolder2 == 4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-cmfcore-2.5.4-python39/">
+            products-cmfcore == 2.5.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-cmfdifftool-3.3.3-python39/">
+            products-cmfdifftool == 3.3.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-cmfdynamicviewfti-6.0.3-python39/">
+            products-cmfdynamicviewfti == 6.0.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-cmfeditions-3.3.4-python39/">
+            products-cmfeditions == 3.3.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-cmfformcontroller-4.1.4-python39/">
+            products-cmfformcontroller == 4.1.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-cmfplone-5.2.5-python39/">
+            products-cmfplone == 5.2.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-cmfquickinstallertool-4.0.4-python39/">
+            products-cmfquickinstallertool == 4.0.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-cmfuid-3.2.0-python39/">
+            products-cmfuid == 3.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-daterecurringindex-3.0.1-python39/">
+            products-daterecurringindex == 3.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-dcworkflow-2.5.0-python39/">
+            products-dcworkflow == 2.5.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-extendedpathindex-4.0.1-python39/">
+            products-extendedpathindex == 4.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-externalmethod-4.5-python39/">
+            products-externalmethod == 4.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-genericsetup-2.1.4-python39/">
+            products-genericsetup == 2.1.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-isurlinportal-1.2.1-python39/">
+            products-isurlinportal == 1.2.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-mailhost-4.11-python39/">
+            products-mailhost == 4.11
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-mimetypesregistry-2.1.8-python39/">
+            products-mimetypesregistry == 2.1.8
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-plonepas-6.0.8-python39/">
+            products-plonepas == 6.0.8
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-pluggableauthservice-2.6.4-python39/">
+            products-pluggableauthservice == 2.6.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-pluginregistry-1.9-python39/">
+            products-pluginregistry == 1.9
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-portaltransforms-3.1.12-python39/">
+            products-portaltransforms == 3.1.12
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-pythonscripts-4.13-python39/">
+            products-pythonscripts == 4.13
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-sessions-4.12-python39/">
+            products-sessions == 4.12
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-siteerrorlog-5.5-python39/">
+            products-siteerrorlog == 5.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-standardcachemanagers-4.1.1-python39/">
+            products-standardcachemanagers == 4.1.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-statusmessages-5.0.5-python39/">
+            products-statusmessages == 5.0.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-temporaryfolder-6.2-python39/">
+            products-temporaryfolder == 6.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-zcatalog-6.0-python39/">
+            products-zcatalog == 6.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-zodbmountpoint-1.2-python39/">
+            products-zodbmountpoint == 1.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/products-zopeversioncontrol-2.0.0-python39/">
+            products-zopeversioncontrol == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/pycparser-2.20-python39/">
+            pycparser == 2.20
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/pyrsistent-0.18.0-python39/">
+            pyrsistent == 0.18.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/pyscss-1.3.7-python39/">
+            pyscss == 1.3.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/python-dateutil-2.8.2-python39/">
+            python-dateutil == 2.8.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/python-gettext-4.0-python39/">
+            python-gettext == 4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/pytz-2021.1-python39/">
+            pytz == 2021.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/record-3.5-python39/">
+            record == 3.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/repoze-xmliter-0.6-python39/">
+            repoze-xmliter == 0.6
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/restrictedpython-5.1-python39/">
+            restrictedpython == 5.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/roman-3.3-python39/">
+            roman == 3.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/sgmllib3k-1.0.0-python39/">
+            sgmllib3k == 1.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/simplejson-3.17.5-python39/">
+            simplejson == 3.17.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/six-1.16.0-python39/">
+            six == 1.16.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/soupsieve-2.2.1-python39/">
+            soupsieve == 2.2.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/tempstorage-5.2-python39/">
+            tempstorage == 5.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/transaction-3.0.1-python39/">
+            transaction == 3.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/unidecode-1.3.2-python39/">
+            unidecode == 1.3.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/waitress-2.0.0-python39/">
+            waitress == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/webob-1.8.7-python39/">
+            webob == 1.8.7
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/webtest-3.0.0-python39/">
+            webtest == 3.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/wsgiproxy2-0.5.1-python39/">
+            wsgiproxy2 == 0.5.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/z3c-autoinclude-0.4.1-python39/">
+            z3c-autoinclude == 0.4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/z3c-caching-2.2-python39/">
+            z3c-caching == 2.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/z3c-form-4.2-python39/">
+            z3c-form == 4.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/z3c-formwidget-query-0.17-python39/">
+            z3c-formwidget-query == 0.17
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/z3c-objpath-1.2-python39/">
+            z3c-objpath == 1.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/z3c-pt-3.3.0-python39/">
+            z3c-pt == 3.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/z3c-relationfield-0.9.0-python39/">
+            z3c-relationfield == 0.9.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/z3c-zcmlhook-1.1-python39/">
+            z3c-zcmlhook == 1.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zc-lockfile-2.0-python39/">
+            zc-lockfile == 2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zc-relation-1.1.post2-python39/">
+            zc-relation == 1.1.post2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zconfig-3.6.0-python39/">
+            zconfig == 3.6.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zdaemon-4.3-python39/">
+            zdaemon == 4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zeo-5.2.3-python39/">
+            zeo == 5.2.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zexceptions-4.1-python39/">
+            zexceptions == 4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zodb-5.6.0-python39/">
+            zodb == 5.6.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zodb3-3.11.0-python39/">
+            zodb3 == 3.11.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zodbpickle-2.0.0-python39/">
+            zodbpickle == 2.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-5.3-python39/">
+            zope == 5.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-annotation-4.7.0-python39/">
+            zope-annotation == 4.7.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-app-locales-4.1-python39/">
+            zope-app-locales == 4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-browser-2.3-python39/">
+            zope-browser == 2.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-browsermenu-4.4-python39/">
+            zope-browsermenu == 4.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-browserpage-4.4.0-python39/">
+            zope-browserpage == 4.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-browserresource-4.4-python39/">
+            zope-browserresource == 4.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-cachedescriptors-4.3.1-python39/">
+            zope-cachedescriptors == 4.3.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-component-5.0.1-python39/">
+            zope-component == 5.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-componentvocabulary-2.2.0-python39/">
+            zope-componentvocabulary == 2.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-configuration-4.4.0-python39/">
+            zope-configuration == 4.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-container-4.4.0-python39/">
+            zope-container == 4.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-contentprovider-4.2.1-python39/">
+            zope-contentprovider == 4.2.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-contenttype-4.5.0-python39/">
+            zope-contenttype == 4.5.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-copy-4.2-python39/">
+            zope-copy == 4.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-datetime-4.3.0-python39/">
+            zope-datetime == 4.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-deferredimport-4.3.1-python39/">
+            zope-deferredimport == 4.3.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-deprecation-4.4.0-python39/">
+            zope-deprecation == 4.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-dottedname-4.3-python39/">
+            zope-dottedname == 4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-event-4.5.0-python39/">
+            zope-event == 4.5.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-exceptions-4.4-python39/">
+            zope-exceptions == 4.4
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-filerepresentation-5.0.0-python39/">
+            zope-filerepresentation == 5.0.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-globalrequest-1.5-python39/">
+            zope-globalrequest == 1.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-hookable-5.1.0-python39/">
+            zope-hookable == 5.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-i18n-4.8.0-python39/">
+            zope-i18n == 4.8.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-i18nmessageid-5.0.1-python39/">
+            zope-i18nmessageid == 5.0.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-interface-5.4.0-python39/">
+            zope-interface == 5.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-intid-4.4.0-python39/">
+            zope-intid == 4.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-keyreference-4.2.0-python39/">
+            zope-keyreference == 4.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-lifecycleevent-4.3-python39/">
+            zope-lifecycleevent == 4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-location-4.2-python39/">
+            zope-location == 4.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-pagetemplate-4.5.0-python39/">
+            zope-pagetemplate == 4.5.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-processlifetime-2.3.0-python39/">
+            zope-processlifetime == 2.3.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-proxy-4.4.0-python39/">
+            zope-proxy == 4.4.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-ptresource-4.2.0-python39/">
+            zope-ptresource == 4.2.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-publisher-6.0.2-python39/">
+            zope-publisher == 6.0.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-ramcache-2.3-python39/">
+            zope-ramcache == 2.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-schema-6.1.0-python39/">
+            zope-schema == 6.1.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-security-5.1.1-python39/">
+            zope-security == 5.1.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-sendmail-5.2-python39/">
+            zope-sendmail == 5.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-sequencesort-4.1.2-python39/">
+            zope-sequencesort == 4.1.2
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-site-4.5.0-python39/">
+            zope-site == 4.5.0
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-size-4.3-python39/">
+            zope-size == 4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-structuredtext-4.3-python39/">
+            zope-structuredtext == 4.3
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-tal-4.5-python39/">
+            zope-tal == 4.5
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-tales-5.1-python39/">
+            zope-tales == 5.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-testbrowser-5.5.1-python39/">
+            zope-testbrowser == 5.5.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-testing-4.9-python39/">
+            zope-testing == 4.9
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-traversing-4.4.1-python39/">
+            zope-traversing == 4.4.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope-viewlet-4.2.1-python39/">
+            zope-viewlet == 4.2.1
+          </a>
+        </li>
+      
+        <li>
+          <a class="sec-d" href="/projects/zope2-4.0-python39/">
+            zope2 == 4.0
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  Try it out:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nix-shell <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  --attr <span style="color:#a31515">&#39;projects.&#34;plone-app-vocabularies&#34;.&#34;latest&#34;.python39.dev&#39;</span> <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;https://github.com/on-nix/python/tarball/d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nix develop <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;github:on-nix/python/d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed#&#34;plone-app-vocabularies-latest-python39&#34;&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+  Install plone-app-vocabularies's command line applications in your system:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nix-env --install <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  --attr <span style="color:#a31515">&#39;apps.&#34;plone-app-vocabularies&#34;.&#34;latest&#34;&#39;</span> <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  --file <span style="color:#a31515">&#39;https://github.com/on-nix/python/tarball/d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ nix profile install <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;github:on-nix/python#&#34;plone-app-vocabularies-latest-python39-bin&#34;&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+  Use many Python projects together:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#008000"># Save this file as: ./example.nix</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># Import Nixpkgs</span>
+</span></span><span style="display:flex;"><span>  nixpkgs = import &lt;nixpkgs&gt; { };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># Import Python on Nix</span>
+</span></span><span style="display:flex;"><span>  pythonOnNix = import
+</span></span><span style="display:flex;"><span>    (builtins.fetchGit {
+</span></span><span style="display:flex;"><span>      ref = <span style="color:#a31515">&#34;main&#34;</span>;
+</span></span><span style="display:flex;"><span>      rev = <span style="color:#a31515">&#34;d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed&#34;</span>;
+</span></span><span style="display:flex;"><span>      url = <span style="color:#a31515">&#34;https://github.com/on-nix/python&#34;</span>;
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>    { inherit nixpkgs; };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  env = pythonOnNix.python39Env {
+</span></span><span style="display:flex;"><span>    name = <span style="color:#a31515">&#34;example&#34;</span>;
+</span></span><span style="display:flex;"><span>    projects = {
+</span></span><span style="display:flex;"><span>      <span style="color:#a31515">&#34;plone-app-vocabularies&#34;</span> = <span style="color:#a31515">&#34;latest&#34;</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># You can add more projects here as you need</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># &#34;a&#34; = &#34;1.0&#34;;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># &#34;b&#34; = &#34;2.0&#34;;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># ...</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># `env` has two attributes:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># - dev: The activation script for the Python on Nix environment</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># - out: The raw contents of the Python site-packages</span>
+</span></span><span style="display:flex;"><span>in
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># The activation script can be used as dev-shell</span>
+</span></span><span style="display:flex;"><span>  shell = env.dev;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008000"># You can also use with Nixpkgs</span>
+</span></span><span style="display:flex;"><span>  example = nixpkgs.stdenv.mkDerivation {
+</span></span><span style="display:flex;"><span>    <span style="color:#008000"># Let&#39;s use the activation script as build input</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000"># so the Python environment is loaded</span>
+</span></span><span style="display:flex;"><span>    buildInputs = [ env.dev ];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    builder = builtins.toFile <span style="color:#a31515">&#34;builder.sh&#34;</span> <span style="color:#a31515">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>      source $stdenv/setup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#008000"># plone-app-vocabularies will be available here!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      touch $out
+</span></span><span style="display:flex;"><span>    <span style="color:#a31515">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    name = <span style="color:#a31515">&#34;example&#34;</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000"># Usage:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   Dev Shell:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ nix-shell --attr shell ./example.nix</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   Build example:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ nix-build --attr example ./example.nix</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#008000"># Save this file as: ./flake.nix</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  inputs = {
+</span></span><span style="display:flex;"><span>    flakeUtils.url = <span style="color:#a31515">&#34;github:numtide/flake-utils&#34;</span>;
+</span></span><span style="display:flex;"><span>    nixpkgs.url = <span style="color:#a31515">&#34;github:nixos/nixpkgs&#34;</span>;
+</span></span><span style="display:flex;"><span>    pythonOnNix.url = <span style="color:#a31515">&#34;github:on-nix/python/d8a7fa21b76ac3b8a1a3fedb41e86352769b09ed&#34;</span>;
+</span></span><span style="display:flex;"><span>    pythonOnNix.inputs.nixpkgs.follows = <span style="color:#a31515">&#34;nixpkgs&#34;</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>  outputs = { self, ... } @ inputs:
+</span></span><span style="display:flex;"><span>    inputs.flakeUtils.lib.eachSystem [ <span style="color:#a31515">&#34;x86_64-linux&#34;</span> ] (system:
+</span></span><span style="display:flex;"><span>      let
+</span></span><span style="display:flex;"><span>        nixpkgs = inputs.nixpkgs.legacyPackages.<span style="color:#a31515">${</span>system<span style="color:#a31515">}</span>;
+</span></span><span style="display:flex;"><span>        pythonOnNix = inputs.pythonOnNix.lib.<span style="color:#a31515">${</span>system<span style="color:#a31515">}</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        env = pythonOnNix.python39Env {
+</span></span><span style="display:flex;"><span>          name = <span style="color:#a31515">&#34;example&#34;</span>;
+</span></span><span style="display:flex;"><span>          projects = {
+</span></span><span style="display:flex;"><span>            <span style="color:#a31515">&#34;plone-app-vocabularies&#34;</span> = <span style="color:#a31515">&#34;latest&#34;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># You can add more projects here as you need</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># &#34;a&#34; = &#34;1.0&#34;;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># &#34;b&#34; = &#34;2.0&#34;;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># ...</span>
+</span></span><span style="display:flex;"><span>          };
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>        <span style="color:#008000"># `env` has two attributes:</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000"># - dev: The activation script for the Python on Nix environment</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#008000"># - out: The raw contents of the Python site-packages</span>
+</span></span><span style="display:flex;"><span>      in
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        devShells = {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#008000"># The activation script can be used as dev-shell</span>
+</span></span><span style="display:flex;"><span>          shell = env.dev;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        packages = {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#008000"># You can also use with Nixpkgs</span>
+</span></span><span style="display:flex;"><span>          example = nixpkgs.stdenv.mkDerivation {
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># Let&#39;s use the activation script as build input</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#008000"># so the Python environment is loaded</span>
+</span></span><span style="display:flex;"><span>            buildInputs = [ env.dev ];
+</span></span><span style="display:flex;"><span>            virtualEnvironment = env.out;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            builder = builtins.toFile <span style="color:#a31515">&#34;builder.sh&#34;</span> <span style="color:#a31515">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>              source $stdenv/setup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              <span style="color:#008000"># plone-app-vocabularies will be available here!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              touch $out
+</span></span><span style="display:flex;"><span>            <span style="color:#a31515">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>            name = <span style="color:#a31515">&#34;example&#34;</span>;
+</span></span><span style="display:flex;"><span>          };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        };
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000"># Usage:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   First add your changes:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ git add flake.nix</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   Dev Shell:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ nix develop .#shell</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#   Build example:</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">#     $ nix build .#example</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+
+    </div>
+
+    <div class="pv3"></div>
+
+    <div class="bt">
+      <div class="cf">
+        <div class="fl pb4 ph4 pt1 w-100 w-50-ns w-50-m w-25-l">
+          <p class="b bb">On Nix</p>
+          <a class="db sec-d" href="https://on-nix.com">Home</a>
+          <a class="db sec-d" href="https://pkgs.on-nix.com">Packages</a>
+          <a class="db sec-d" href="https://python.on-nix.com">Python</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 50px"></div>
+  </body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      
+  Using inflect latest for python36 on Nix
+
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" href=/styles.min.css />
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Raleway' type='text/css'>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/on-nix/artwork/8981511eb429c4fe2d772347cd3efe493ef7f670/logo/favicon.ico" />
+  </head>
+  <body class="bg-white f4 font lh-copy">
+
+    <nav class="bg-black w-100">
+      <a class="b f2 link pl2 white" href="/">
+        
+  Python on Nix
+
+        </a>
+      </nav>
+
+      <nav class="bg-cyan pa0 shadow-1 w-100">
+        <p class="black ma0 pa0 pl2">
+          
+  Everything you need to run your Python code on Nix
+
+        </p>
+      </nav>
+
+    <div class="pl1">
+      <div class="pa1">
+        
+  
+
+  <p class="ma1">
+    <dfn class="b fs-normal">
+      inflect latest for python36
+    </dfn>
+    = Correctly generate plurals, singular nouns, ordinals, indefinite articles; convert numbers to words
+  </p>
+
+  <ul>
+    <li>
+      <a class="blue link" href="https://pypi.org/project/inflect">
+        https://pypi.org/project/inflect
+      </a>
+    </li>
+    
+      <li>
+        <a class="blue link" href=https://github.com/jaraco/inflect>
+          https://github.com/jaraco/inflect
+        </a>
+      </li>
+    
+  </ul>
+
+  
+
+  
+    Custom Python tests:
+
+    <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#00f">import</span> inflect
+</code></pre></td></tr></table>
+</div>
+</div>
+  
+
+  
+
+  
+
+  Try it out:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nix-shell <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  --attr <span style="color:#a31515">&#39;projects.&#34;inflect&#34;.&#34;latest&#34;.python36.dev&#39;</span> <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;https://github.com/on-nix/python/tarball/0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nix develop <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;github:on-nix/python/0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff#&#34;inflect-latest-python36&#34;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+  Install inflect's command line applications in your system:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nix-env --install <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  --attr <span style="color:#a31515">&#39;apps.&#34;inflect&#34;.&#34;latest&#34;&#39;</span> <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  --file <span style="color:#a31515">&#39;https://github.com/on-nix/python/tarball/0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ nix profile install <span style="color:#a31515">\
+</span><span style="color:#a31515"></span>  <span style="color:#a31515">&#39;github:on-nix/python#&#34;inflect-latest-python36-bin&#34;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+  Use many Python projects together:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#008000"># Save this file as: ./example.nix</span>
+
+let
+  <span style="color:#008000"># Import Nixpkgs</span>
+  nixpkgs = import &lt;nixpkgs&gt; { };
+
+  <span style="color:#008000"># Import Python on Nix</span>
+  pythonOnNix = import
+    (builtins.fetchGit {
+      ref = <span style="color:#a31515">&#34;main&#34;</span>;
+      rev = <span style="color:#a31515">&#34;0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff&#34;</span>;
+      url = <span style="color:#a31515">&#34;https://github.com/on-nix/python&#34;</span>;
+    })
+    { inherit nixpkgs; };
+
+  env = pythonOnNix.python36Env {
+    name = <span style="color:#a31515">&#34;example&#34;</span>;
+    projects = {
+      <span style="color:#a31515">&#34;inflect&#34;</span> = <span style="color:#a31515">&#34;latest&#34;</span>;
+      <span style="color:#008000"># You can add more projects here as you need</span>
+      <span style="color:#008000"># &#34;a&#34; = &#34;1.0&#34;;</span>
+      <span style="color:#008000"># &#34;b&#34; = &#34;2.0&#34;;</span>
+      <span style="color:#008000"># ...</span>
+    };
+  };
+
+  <span style="color:#008000"># `env` has two attributes:</span>
+  <span style="color:#008000"># - dev: The activation script for the Python on Nix environment</span>
+  <span style="color:#008000"># - out: The raw contents of the Python site-packages</span>
+in
+{
+  <span style="color:#008000"># The activation script can be used as dev-shell</span>
+  shell = env.dev;
+
+  <span style="color:#008000"># You can also use with Nixpkgs</span>
+  example = nixpkgs.stdenv.mkDerivation {
+    <span style="color:#008000"># Let&#39;s use the activation script as build input</span>
+    <span style="color:#008000"># so the Python environment is loaded</span>
+    buildInputs = [ env.dev ];
+
+    builder = builtins.toFile <span style="color:#a31515">&#34;builder.sh&#34;</span> <span style="color:#a31515">&#39;&#39;</span>
+      source $stdenv/setup
+
+      <span style="color:#008000"># inflect will be available here!</span>
+
+      touch $out
+    <span style="color:#a31515">&#39;&#39;</span>;
+    name = <span style="color:#a31515">&#34;example&#34;</span>;
+  };
+}
+
+<span style="color:#008000"># Usage:</span>
+#
+<span style="color:#008000">#   Dev Shell:</span>
+<span style="color:#008000">#     $ nix-shell --attr shell ./example.nix</span>
+#
+<span style="color:#008000">#   Build example:</span>
+<span style="color:#008000">#     $ nix-build --attr example ./example.nix</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#008000"># Save this file as: ./flake.nix</span>
+
+{
+  inputs = {
+    flakeUtils.url = <span style="color:#a31515">&#34;github:numtide/flake-utils&#34;</span>;
+    nixpkgs.url = <span style="color:#a31515">&#34;github:nixos/nixpkgs&#34;</span>;
+    pythonOnNix.url = <span style="color:#a31515">&#34;github:on-nix/python/0e712f09e8d9ddd7519c9c0ae7fd2a6bc837b7ff&#34;</span>;
+    pythonOnNix.inputs.nixpkgs.follows = <span style="color:#a31515">&#34;nixpkgs&#34;</span>;
+  };
+  outputs = { self, ... } @ inputs:
+    inputs.flakeUtils.lib.eachSystem [ <span style="color:#a31515">&#34;x86_64-linux&#34;</span> ] (system:
+      let
+        nixpkgs = inputs.nixpkgs.legacyPackages.<span style="color:#a31515">${</span>system<span style="color:#a31515">}</span>;
+        pythonOnNix = inputs.pythonOnNix.lib.<span style="color:#a31515">${</span>system<span style="color:#a31515">}</span>;
+
+        env = pythonOnNix.python36Env {
+          name = <span style="color:#a31515">&#34;example&#34;</span>;
+          projects = {
+            <span style="color:#a31515">&#34;inflect&#34;</span> = <span style="color:#a31515">&#34;latest&#34;</span>;
+            <span style="color:#008000"># You can add more projects here as you need</span>
+            <span style="color:#008000"># &#34;a&#34; = &#34;1.0&#34;;</span>
+            <span style="color:#008000"># &#34;b&#34; = &#34;2.0&#34;;</span>
+            <span style="color:#008000"># ...</span>
+          };
+        };
+        <span style="color:#008000"># `env` has two attributes:</span>
+        <span style="color:#008000"># - dev: The activation script for the Python on Nix environment</span>
+        <span style="color:#008000"># - out: The raw contents of the Python site-packages</span>
+      in
+      {
+        devShells = {
+
+          <span style="color:#008000"># The activation script can be used as dev-shell</span>
+          shell = env.dev;
+
+        };
+
+        packages = {
+
+          <span style="color:#008000"># You can also use with Nixpkgs</span>
+          example = nixpkgs.stdenv.mkDerivation {
+            <span style="color:#008000"># Let&#39;s use the activation script as build input</span>
+            <span style="color:#008000"># so the Python environment is loaded</span>
+            buildInputs = [ env.dev ];
+            virtualEnvironment = env.out;
+
+            builder = builtins.toFile <span style="color:#a31515">&#34;builder.sh&#34;</span> <span style="color:#a31515">&#39;&#39;</span>
+              source $stdenv/setup
+
+              <span style="color:#008000"># inflect will be available here!</span>
+
+              touch $out
+            <span style="color:#a31515">&#39;&#39;</span>;
+            name = <span style="color:#a31515">&#34;example&#34;</span>;
+          };
+
+        };
+      }
+    );
+}
+
+<span style="color:#008000"># Usage:</span>
+<span style="color:#008000">#   First add your changes:</span>
+<span style="color:#008000">#     $ git add flake.nix</span>
+#
+<span style="color:#008000">#   Dev Shell:</span>
+<span style="color:#008000">#     $ nix develop .#shell</span>
+#
+<span style="color:#008000">#   Build example:</span>
+<span style="color:#008000">#     $ nix build .#example</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </li>
+  </ul>
+
+
+      </div>
+    </div>
+
+    
+    
+  </body>
+</html>
