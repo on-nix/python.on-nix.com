@@ -95,4 +95,18 @@
     </li>
   </ul>
 
+  Use many Python projects together:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      {{ highlight $projectData.pythonVersion.data.demos.many.stable "sh" ""}}
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      {{ highlight $projectData.pythonVersion.data.demos.many.flakes "sh" ""}}
+    </li>
+  </ul>
+
 {{ end }}
