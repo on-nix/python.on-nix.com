@@ -10,3 +10,4 @@ module:
 permalinks:
   projects: /projects/:filename/
 publishDir: docs
+taxonomies: []
