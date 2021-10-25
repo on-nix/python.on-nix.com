@@ -67,12 +67,32 @@
     </ul>
   {{ end }}
 
-  Try it out on Nix stable:
+  Try it out:
 
-  {{ highlight $projectData.pythonVersion.data.demos.tryItOut.stable "sh" ""}}
+  <ul>
+    Nix stable:
+    <li class="list">
+      {{ highlight $projectData.pythonVersion.data.demos.tryItOut.stable "sh" ""}}
+    </li>
 
-  Try it out on Nix Flakes:
+    Nix Flakes:
+    <li class="list">
+      {{ highlight $projectData.pythonVersion.data.demos.tryItOut.flakes "sh" ""}}
+    </li>
+  </ul>
 
-  {{ highlight $projectData.pythonVersion.data.demos.tryItOut.flakes "sh" ""}}
+  Install {{ $projectData.title }}'s command line applications in your system:
+
+  <ul>
+    Nix stable:
+    <li class="list">
+      {{ highlight $projectData.pythonVersion.data.demos.installApps.stable "sh" ""}}
+    </li>
+
+    Nix Flakes:
+    <li class="list">
+      {{ highlight $projectData.pythonVersion.data.demos.installApps.flakes "sh" ""}}
+    </li>
+  </ul>
 
 {{ end }}

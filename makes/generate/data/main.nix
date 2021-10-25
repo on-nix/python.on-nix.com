@@ -36,17 +36,24 @@ let
                 (builtins.mapAttrs
                   (pythonVersion: pythonVersionMeta: {
                     demos = {
-                      tryItOut = {
-                        stable = ''
-                          $ nix-shell \
-                            --attr 'projects."${project}"."${version}".${pythonVersion}.dev' \
-                            'https://github.com/on-nix/python/tarball/${inputs.pythonOnNixRev}'
-                        '';
-                        flakes = ''
-                          $ nix develop \
-                            'github:on-nix/python/${inputs.pythonOnNixRev}#"${project}-${version}-${pythonVersion}"'
-                        '';
-                      };
+                      tryItOut.stable = ''
+                        $ nix-shell \
+                          --attr 'projects."${project}"."${version}".${pythonVersion}.dev' \
+                          'https://github.com/on-nix/python/tarball/${inputs.pythonOnNixRev}'
+                      '';
+                      tryItOut.flakes = ''
+                        $ nix develop \
+                          'github:on-nix/python/${inputs.pythonOnNixRev}#"${project}-${version}-${pythonVersion}"'
+                      '';
+                      installApps.stable = ''
+                        $ nix-env --install \
+                          --attr 'apps."${project}"."${version}"' \
+                          --file 'https://github.com/on-nix/python/tarball/${inputs.pythonOnNixRev}'
+                      '';
+                      installApps.flakes = ''
+                        $ nix profile install \
+                          'github:on-nix/python#"${project}-${version}-${pythonVersion}-bin"'
+                      '';
                     };
                     nameShort = {
                       "python36" = "36";
