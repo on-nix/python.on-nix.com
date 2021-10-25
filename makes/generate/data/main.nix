@@ -122,12 +122,13 @@ let
                             flakeUtils.url = "github:numtide/flake-utils";
                             nixpkgs.url = "github:nixos/nixpkgs";
                             pythonOnNix.url = "github:on-nix/python/${inputs.pythonOnNixRev}";
+                            pythonOnNix.inputs.nixpkgs.follows = "nixpkgs";
                           };
                           outputs = { self, ... } @ inputs:
                             inputs.flakeUtils.lib.eachSystem [ "x86_64-linux" ] (system:
                               let
                                 nixpkgs = inputs.nixpkgs.legacyPackages.''${system};
-                                pythonOnNix = inputs.pythonOnNix.lib { inherit nixpkgs system; };
+                                pythonOnNix = inputs.pythonOnNix.lib.''${system};
 
                                 env = pythonOnNix.${pythonVersion}Env {
                                   name = "example";
