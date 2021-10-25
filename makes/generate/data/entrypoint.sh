@@ -4,14 +4,31 @@ function main {
   : && rm -rf content/projects/* \
     && rm -rf data/projects/* \
     && mkdir -p content/projects \
-    && mkdir -p data/projects \
-    && for project in __argProjectsList__/*; do
-      : && project="$(basename "${project}")" \
-        && echo --- > "content/projects/${project}.md" \
-        && echo "project: ${project}" >> "content/projects/${project}.md" \
-        && echo --- >> "content/projects/${project}.md" \
-        && cp "__argProjectsList__/${project}" "data/projects/${project}.json" \
+    && mkdir -p data/projects/by_name \
+    && mkdir -p data/projects/by_tree \
+    && for projectPath in __argData__/projects/by_name/*; do
+      : && project="$(basename "${projectPath}")" \
+        && cp "${projectPath}" "data/projects/by_name/${project}.json" \
         || return 1
+    done \
+    && for projectPath in __argData__/projects/by_tree/*; do
+      for versionPath in "${projectPath}/"*; do
+        for pythonVersionPath in "${versionPath}/"*; do
+          : && project="$(basename "${projectPath}")" \
+            && version="$(basename "${versionPath}")" \
+            && pythonVersion="$(basename "${pythonVersionPath}")" \
+            && index="${project}-${version}-${pythonVersion}" \
+            && path="${project}/${version}/${pythonVersion}" \
+            && echo --- > "content/projects/${index}.md" \
+            && echo "index: ${index}" >> "content/projects/${index}.md" \
+            && echo "project: ${project}" >> "content/projects/${index}.md" \
+            && echo "version: ${version}" >> "content/projects/${index}.md" \
+            && echo "pythonVersion: ${pythonVersion}" >> "content/projects/${index}.md" \
+            && echo --- >> "content/projects/${index}.md" \
+            && cp "${pythonVersionPath}" "data/projects/by_tree/${index}.json" \
+            || return 1
+        done
+      done
     done
 }
 
