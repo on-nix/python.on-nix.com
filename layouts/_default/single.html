@@ -59,7 +59,7 @@
     <ul>
       {{ range $project, $version := $projectData.pythonVersion.data.closure }}
         <li>
-          <a class="blue" href="/projects/{{ $project }}-{{ $version }}-{{ $projectData.pythonVersion.name }}">
+          <a class="blue" href="/projects/{{ $project }}-{{ $version }}-{{ $projectData.pythonVersion.name }}/">
             {{ $project }} == {{ $version }}
           </a>
         </li>
