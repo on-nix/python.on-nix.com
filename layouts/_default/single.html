@@ -22,13 +22,13 @@
 
   <ul>
     <li>
-      <a class="blue link" href="https://pypi.org/project/{{ $projectData.title }}">
+      <a class="sec-d" href="https://pypi.org/project/{{ $projectData.title }}">
         https://pypi.org/project/{{ $projectData.title }}
       </a>
     </li>
     {{ if $projectData.meta.home }}
       <li>
-        <a class="blue link" href={{ $projectData.meta.home }}>
+        <a class="sec-d" href={{ $projectData.meta.home }}>
           {{ $projectData.meta.home }}
         </a>
       </li>
@@ -59,7 +59,7 @@
     <ul>
       {{ range $project, $version := $projectData.pythonVersion.data.closure }}
         <li>
-          <a class="blue" href="/projects/{{ $project }}-{{ $version }}-{{ $projectData.pythonVersion.name }}/">
+          <a class="sec-d" href="/projects/{{ $project }}-{{ $version }}-{{ $projectData.pythonVersion.name }}/">
             {{ $project }} == {{ $version }}
           </a>
         </li>

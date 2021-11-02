@@ -31,7 +31,7 @@
             <td class="ph3">{{ $version.name }}</td>
             <td class="ph3">
               {{ range $pythonVersion := $version.data.pythonVersions }}
-                <a class="b blue" href="/projects/{{ $project.title }}-{{ $version.name }}-{{ $pythonVersion.name }}/">
+                <a class="b sec-d" href="/projects/{{ $project.title }}-{{ $version.name }}-{{ $pythonVersion.name }}/">
                   {{ $pythonVersion.data.nameShort }}
                 </a>
                 &nbsp;
