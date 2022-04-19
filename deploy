@@ -1,0 +1,5 @@
+#! /bin/sh -eu
+
+git checkout release origin/release
+cp -rT ./docs/ ./
+echo now git push
